@@ -52,7 +52,7 @@ url_encode() {
 encoded_string=$(url_encode "$search")
 
 # Execute the curl command and handle errors
-response=$(curl -s "https://api.shodan.io/shodan/host/search?key=s5By6j16t5yfQjFGLTm5vWOhbfrlbKdF&query=$encoded_string")
+response=$(curl -s "https://api.shodan.io/shodan/host/search?key=APIKEY&query=$encoded_string")
 
 # Check if the response contains matches
 if [[ $(echo "$response" | jq -r '.matches | length') -gt 0 ]]; then
